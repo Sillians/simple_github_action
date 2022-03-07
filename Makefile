@@ -8,7 +8,7 @@ test:
 
 # black is the uncompromising python code formatter, used to control over minutiae of hand-formatting.
 # black gives speed, determinism, and freedom from pycodestyle nagging about formatting.
-black:
+format:
 		black *.py
 
 # pylint is a python static code analysis tool which looks for programming errors, helps enforcing a coding standard,
