@@ -1,0 +1,33 @@
+name: Simple python app test with Github Actions
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v3.0.0
+      with:
+        python-version: 3.8 
+      
+    - name: Install dependencies
+      run: |
+        make install
+      
+    - name: lint with Pylint
+      run: |
+        make lint
+      
+    - name: Test with Pytest
+      run: |
+        make test
+    
+    - name: Format code
+      run: |
+        make  format
